@@ -5,8 +5,6 @@
 
 CMMC_Legend os;
 
-
-
 void setup()
 {
   os.addModule(new PRAJ_ESPNowModule()); 

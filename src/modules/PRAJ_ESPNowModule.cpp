@@ -70,7 +70,7 @@ void PRAJ_ESPNowModule::_init_espnow() {
   espNow.enable_retries(true);
   static CMMC_LED *led;
   led = ((CMMC_Legend*) os)->getBlinker();
-  led->detach();
+  // led->detach();
   espNow.on_message_sent([](uint8_t *macaddr, u8 status) { led->toggle(); }); 
 
   static PRAJ_ESPNowModule* module; 
@@ -81,7 +81,7 @@ void PRAJ_ESPNowModule::_init_espnow() {
     module->isCrashed = data[0];
     Serial.printf("[class] isCrashed = %u\r\n", module->isCrashed);;
     if (module->isCrashed) {
-      led->blink(500);
+      led->blink(100);
     }
     else { 
       led->detach(); 

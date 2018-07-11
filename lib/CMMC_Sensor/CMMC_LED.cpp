@@ -35,7 +35,6 @@ void CMMC_LED::setPin(uint8_t pin)
 {
   _ledPin = pin;
   pinMode(_ledPin, OUTPUT);
-  digitalWrite(_ledPin, LOW);
 }
 
 void CMMC_LED::toggle()

@@ -64,7 +64,6 @@ void CMMC_ESPNow::send(uint8_t *mac, u8* data, int len, void_cb_t cb, uint32_t w
   uint16_t MAX_RETRIES   = 10;
   uint16_t RETRIES_DELAY = 10;
   uint16_t retries = 0;
-
   esp_now_send(mac, data, len);
   delay(RETRIES_DELAY*(retries+1));
 
